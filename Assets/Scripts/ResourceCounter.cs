@@ -7,22 +7,22 @@ public class ResourceCounter : MonoBehaviour
 
     private int _resourcesNumber;
 
-    private void Awake()
+    private void Start()
     {
-        _resourcesNumber = 0;
+        _resorceCounterText.text = _resourcesNumber.ToString();
     }
 
     private void OnEnable()
     {
-        BaseCollisionHandler.ResourceCollected += AddResource;
+        BaseCollisionHandler.ResourceCollected += OnAddResource;
     }
 
     private void OnDisable()
     {
-        BaseCollisionHandler.ResourceCollected -= AddResource;
+        BaseCollisionHandler.ResourceCollected -= OnAddResource;
     }
 
-    private void AddResource()
+    private void OnAddResource()
     {
         _resourcesNumber++;
         _resorceCounterText.text = _resourcesNumber.ToString();

@@ -6,11 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Base))]
 public class ResourceScanner : MonoBehaviour
 {
-    [SerializeField] private float _scanInterval;
-
     private Base _base;
     private bool _isScanning = true;
     private int _minResourcesAmount = 1;
+    private float _scanInterval = 0.1f;
     private Coroutine _scanArea;
 
     private void Awake()
@@ -18,6 +17,7 @@ public class ResourceScanner : MonoBehaviour
         _base = GetComponent<Base>();
         _scanArea = StartCoroutine(ScanArea());
     }
+
     private void OnDestroy()
     {
         if (_scanArea != null)
@@ -27,7 +27,7 @@ public class ResourceScanner : MonoBehaviour
     private IEnumerator ScanArea()
     {
         var waitForSeconds = new WaitForSeconds(_scanInterval);
-        List<Resource> allResources;
+        List<Resource> allResources = new List<Resource>();
         List<Resource> resources = new List<Resource>();
 
         while (_isScanning)
@@ -39,7 +39,7 @@ public class ResourceScanner : MonoBehaviour
             {
                 foreach (var resource in allResources)
                 {
-                    if(resource.IsCollectorAppointed == false)
+                    if(resource.CheckCanCollected())
                     {
                         resource.AppointCollector();
                         resources.Add(resource);

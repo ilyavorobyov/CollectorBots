@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collector : MonoBehaviour
@@ -12,12 +9,7 @@ public class Collector : MonoBehaviour
     private bool _isGoForResource;
     private bool _isGoToBase;
 
-    public bool IsBusyCollecting { get; private set; }
-
-    private void Awake()
-    {
-        IsBusyCollecting = false;
-    }
+    public bool IsBusyCollecting { get; private set; } = false;
 
     private void Update()
     {
@@ -65,7 +57,6 @@ public class Collector : MonoBehaviour
         {
             IsBusyCollecting = false;
             _isGoToBase = false;
-            _currentResource = null;
         }
     }
 }

@@ -6,8 +6,8 @@ public class ResourceSpawner : MonoBehaviour
     [SerializeField] private float _respawnInterval;
     [SerializeField] private Resource _resource;
 
-    private float _minAxisValue = -12;
-    private float _maxAxisValue = 12;
+    private float _minAxisValue = -10;
+    private float _maxAxisValue = 10;
     private float _resourcePositionY = 0.8f;
     private bool _isCreating = true;
     private Coroutine _createResource;

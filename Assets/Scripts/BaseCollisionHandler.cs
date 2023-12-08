@@ -10,7 +10,7 @@ public class BaseCollisionHandler : MonoBehaviour
         if(other.TryGetComponent(out Resource resource))
         {
             ResourceCollected?.Invoke();
-            Destroy(resource, 1);
+            resource.MakeCollected();
         }
     }
 }

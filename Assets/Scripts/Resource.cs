@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
-    public bool IsCollectorAppointed { get; private set; }
-
-    private void Awake()
-    {
-        IsCollectorAppointed = false;
-    }
+    private bool _isCollectorAppointed = false;
+    private bool _isCollected = false;
 
     public void AppointCollector()
     {
-        IsCollectorAppointed = true;
+        _isCollectorAppointed = true;
+    }
+
+    public bool CheckCanCollected()
+    {
+        return !_isCollectorAppointed && !_isCollected;
+    }
+
+    public void MakeCollected()
+    {
+        _isCollected = true;
     }
 }
