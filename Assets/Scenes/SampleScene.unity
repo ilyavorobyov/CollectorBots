@@ -755,6 +755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae32e2d20c8a0348980dd62f7d17fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collectors:
+  - {fileID: 1522281842}
+  - {fileID: 2081093639}
+  - {fileID: 1037324085}
 --- !u!136 &1015132570
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -867,6 +871,7 @@ GameObject:
   - component: {fileID: 1037324083}
   - component: {fileID: 1037324082}
   - component: {fileID: 1037324081}
+  - component: {fileID: 1037324085}
   m_Layer: 0
   m_Name: Collector3
   m_TagString: Untagged
@@ -962,6 +967,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037324085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037324080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86ca5057b6b5c740867273491c0e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
 --- !u!1 &1454179826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1094,7 @@ GameObject:
   - component: {fileID: 1522281840}
   - component: {fileID: 1522281839}
   - component: {fileID: 1522281838}
+  - component: {fileID: 1522281842}
   m_Layer: 0
   m_Name: Collector1
   m_TagString: Untagged
@@ -1171,6 +1190,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522281842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522281837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86ca5057b6b5c740867273491c0e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
 --- !u!1 &2081093634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1215,7 @@ GameObject:
   - component: {fileID: 2081093637}
   - component: {fileID: 2081093636}
   - component: {fileID: 2081093635}
+  - component: {fileID: 2081093639}
   m_Layer: 0
   m_Name: Collector2
   m_TagString: Untagged
@@ -1278,6 +1311,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2081093639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081093634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86ca5057b6b5c740867273491c0e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
