@@ -1,15 +1,21 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(BaseWallet))]
 public class BaseCollisionHandler : MonoBehaviour
 {
-    public static event UnityAction ResourceCollected;
+    private BaseWallet _wallet;
+
+    private void Awake()
+    {
+        _wallet = GetComponent<BaseWallet>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out Resource resource))
         {
-            ResourceCollected?.Invoke();
+            _wallet.AddResource();
             resource.MakeCollected();
         }
     }

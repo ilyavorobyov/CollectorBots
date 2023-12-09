@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
-    [SerializeField] private List<Collector> _collectors;
+    [SerializeField] private Collector _collector;
 
-    private void Awake()
+    private List<Collector> _collectors = new List<Collector>();
+    private int _startCollectorsNumber = 3;
+
+    private void Start()
     {
-        if(_collectors != null)
+        for(int i = 0;  i < _startCollectorsNumber; i++)
         {
-            foreach(Collector collector in _collectors)
-            {
-                collector.Init(transform.position);
-            }
-        }    
+            AddNewCollector();
+        }
     }
 
     public void SearchFreeCollector(Resource resource)
@@ -26,5 +26,12 @@ public class Base : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void AddNewCollector()
+    {
+        Collector collector = Instantiate(_collector, transform.position, Quaternion.identity);
+        collector.Init(transform.position);
+        _collectors.Add(collector);
     }
 }

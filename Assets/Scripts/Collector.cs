@@ -26,6 +26,7 @@ public class Collector : MonoBehaviour
     public void Init(Vector3 basePosition)
     {
         _basePosition = basePosition;
+        transform.position = _basePosition;
     }
 
     public void AppointResource(Resource resource)
