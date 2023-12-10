@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41ae0b8851ca2346835fe5139bff42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _respawnInterval: 1
+  _respawnInterval: 0.67
   _resource: {fileID: 9085850807835256244, guid: d0c5d38c1ed13514db2a66595e154971, type: 3}
 --- !u!4 &205063557
 Transform:
@@ -850,12 +850,16 @@ PrefabInstance:
       value: Base
       objectReference: {fileID: 0}
     - target: {fileID: 8812425602998763166, guid: 570a1c212b8baf94d8b98090835f2ea1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812425602998763166, guid: 570a1c212b8baf94d8b98090835f2ea1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8812425602998763166, guid: 570a1c212b8baf94d8b98090835f2ea1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 8812425602998763166, guid: 570a1c212b8baf94d8b98090835f2ea1, type: 3}
       propertyPath: m_LocalPosition.z

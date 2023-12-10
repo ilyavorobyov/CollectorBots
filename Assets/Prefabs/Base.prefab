@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4135292428746021473}
   - component: {fileID: 891765625335385082}
   - component: {fileID: 3195171708265256836}
-  - component: {fileID: 6299404429787512042}
+  - component: {fileID: 2808622048337591859}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -34,8 +34,8 @@ Transform:
   m_GameObject: {fileID: 6273190678092257164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.1914, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collector: {fileID: 864164839832765455, guid: ce2c6d4490b916d4f90a34fce302ca10, type: 3}
+  _baseSample: {fileID: 8841392328149125664}
 --- !u!114 &4135292428746021473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff974913b8756e478ef172730de73d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6299404429787512042
+--- !u!114 &2808622048337591859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6273190678092257164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94369bf8f8ad8c44aadbe217b18ca824, type: 3}
+  m_Script: {fileID: 11500000, guid: 851f6aff7829ee0489e9a9385e0c703d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _flag: {fileID: 3840283469364334966, guid: 06bd1c19d495de741aefbb67d23635ee, type: 3}

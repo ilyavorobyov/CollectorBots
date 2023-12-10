@@ -5,9 +5,12 @@ public class Collector : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Resource _currentResource;
+    private Base _baseObject;
     private Vector3 _basePosition;
+    private Vector3 _currentFlagPosition;
     private bool _isGoForResource;
     private bool _isGoToBase;
+    private bool _isGoBuildNewBase;
 
     public bool IsBusyCollecting { get; private set; } = false;
 
@@ -17,15 +20,22 @@ public class Collector : MonoBehaviour
         {
             GoForResource();
         }
+
         if (_isGoToBase)
         {
             GoBaseWithResource();
         }
+
+        if (_isGoBuildNewBase)
+        {
+            GoBuildNewBase();
+        }
     }
 
-    public void Init(Vector3 basePosition)
+    public void Init(Base baseObject)
     {
-        _basePosition = basePosition;
+        _baseObject = baseObject;
+        _basePosition = baseObject.transform.position;
         transform.position = _basePosition;
     }
 
@@ -34,6 +44,29 @@ public class Collector : MonoBehaviour
         IsBusyCollecting = true;
         _isGoForResource = true;
         _currentResource = resource;
+    }
+
+    public void InitBuildBase(Vector3 currentFlagPosition)
+    {
+        _currentFlagPosition = currentFlagPosition;
+        _isGoBuildNewBase = true;
+        _isGoForResource = false;
+    }
+
+    private void GoBuildNewBase()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, _currentFlagPosition,
+            _speed * Time.deltaTime);
+
+        if (transform.position == _currentFlagPosition)
+        {
+            _isGoBuildNewBase = false;
+            IsBusyCollecting = false;
+            _baseObject.FinishBuildNewBase();
+            Base newBase = Instantiate(_baseObject, _currentFlagPosition, Quaternion.identity);
+            Init(newBase);
+            newBase.AddNewCollector(this);
+        }
     }
 
     private void GoForResource()
@@ -58,6 +91,7 @@ public class Collector : MonoBehaviour
         {
             IsBusyCollecting = false;
             _isGoToBase = false;
+            Destroy(_currentResource.gameObject);
         }
     }
 }

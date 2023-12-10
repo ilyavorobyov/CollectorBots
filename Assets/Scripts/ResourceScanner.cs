@@ -15,10 +15,25 @@ public class ResourceScanner : MonoBehaviour
     private void Awake()
     {
         _base = GetComponent<Base>();
-        _scanArea = StartCoroutine(ScanArea());
     }
 
     private void OnDestroy()
+    {
+        StopScanningArea();
+    }
+
+    private void OnDisable()
+    {
+        StopScanningArea();
+    }
+
+    private void OnEnable()
+    {
+        StopScanningArea();
+        _scanArea = StartCoroutine(ScanArea());
+    }
+
+    private void StopScanningArea()
     {
         if (_scanArea != null)
             StopCoroutine(_scanArea);
